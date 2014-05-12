@@ -36,7 +36,7 @@ public class textureParams
      * to be sent to the various shaders.
      *
      * @param filename - The name of the texture file.
-     *
+     * Implemented by: Stephen Yingling
      */
     public void loadTexture (String filename)
     {
@@ -64,6 +64,7 @@ public class textureParams
      *
      * @param gl2 - GL2 object on which all OpenGL calls are to be made
      *
+     * It did not seem necessary to imp[lement this to get the program to work on the Ubuntu Systems
      */
     public void setUpTextures (int program, GL2 gl2)
     {

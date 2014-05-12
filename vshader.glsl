@@ -1,14 +1,15 @@
 #version 120
 
 attribute vec4 vPosition;
-uniform vec3 theta;
 attribute vec2 vTexCoord;
 
 varying vec2 texCo;
 
 void main()
 {
-     vec3 angles = radians (theta);
+     //Rotate it 180 degrees
+     vec3 halfTurn = vec3(0,0,180);
+     vec3 angles = radians (halfTurn);
         vec3 c = cos (angles);
         vec3 s = sin (angles);
 
@@ -32,5 +33,4 @@ void main()
         gl_Position = rz * ry * rx * vPosition;
 
     texCo = vTexCoord;
-    //gl_Position = vPosition;
 }

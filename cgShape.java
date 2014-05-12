@@ -147,10 +147,13 @@ public class cgShape extends simpleShape
      * @param p1 - The first point of the triangle
      * @param p2 - The second point of the triangle
      * @param p3 - The third point of the triangle
+     * @param txllx - The x coordinate of the lower left of the texture square
+     * @param txlly - The y coordinate of the lower left of the texture square
      * Implemented by: Stephen Yingling
      */
     public void addTriangle(MyPoint p1, MyPoint p2, MyPoint p3,float txllx, float txlly, boolean flip){
 
+	//front and back
         if(p1.getZ() == p2.getZ() && p2.getZ() == p3.getZ()){
             if(!flip){
                 addTriangle(p1.getX(), p1.getY(), p1.getZ(),.25f*(p1.getX()+.5f)+txllx,.25f*(p1.getY()+.5f)+txlly,
@@ -164,6 +167,7 @@ public class cgShape extends simpleShape
             }
         }
 
+	//left and right
         if(p1.getX() == p2.getX() && p2.getX() == p3.getX()){
 
             if(!flip){
@@ -178,6 +182,7 @@ public class cgShape extends simpleShape
             }
         }
 
+	//Top and bottom
         if(p1.getY() == p2.getY() && p1.getY() == p3.getY()){
 
             if(!flip){
